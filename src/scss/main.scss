@@ -66,7 +66,7 @@ header {
   }
 
   nav ul {
-    z-index: -3;
+    z-index: 2;
     position: fixed;
     width: 60%;
     background: $secondary-color;
@@ -76,7 +76,7 @@ header {
     padding: 3em 0;
     transform: translateX(100%);
     opacity: 0;
-    transition: all 0.5s ease-in-out;
+    transition: opacity 0.4s ease-in-out, transform 0.5s ease-in-out;
 
     li {
       padding: 3em;
@@ -368,6 +368,38 @@ section {
 
   header {
     padding: 0 6em;
+
+    .hamburger {
+      display: none;
+    }
+
+    nav ul {
+      z-index: -3;
+      position: unset;
+      display: flex;
+      width: unset;
+      background: unset;
+      height: unset;
+      bottom: unset;
+      right: unset;
+      padding: unset;
+      transform: unset;
+      opacity: unset;
+      transition: all 0.5s ease-in-out;
+
+      li {
+        margin: 0 2em;
+        padding: unset;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          font-size: 16px;
+        }
+      }
+    }
   }
 
   .footer {
@@ -435,38 +467,6 @@ section {
   }
   header {
     padding: 0 8em;
-
-    nav ul {
-      z-index: -3;
-      position: unset;
-      display: flex;
-      width: unset;
-      background: unset;
-      height: unset;
-      bottom: unset;
-      right: unset;
-      padding: unset;
-      transform: unset;
-      opacity: unset;
-      transition: all 0.5s ease-in-out;
-
-      li {
-        margin: 0 2em;
-        padding: unset;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        a {
-          font-size: 16px;
-        }
-      }
-    }
-
-    .hamburger {
-      display: none;
-    }
   }
 
   .hero {
@@ -650,10 +650,14 @@ section {
     .hero-text {
       padding: 14em 6em 6em 12em;
     }
+
+    .hero-images {
+      width: 80%;
+    }
   }
 
   .projects {
-    margin-top: 6em;
+    margin-top: 8em;
 
     .projects-wrapper {
       padding: 0 12em;
