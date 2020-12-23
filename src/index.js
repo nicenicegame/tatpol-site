@@ -9,18 +9,18 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 const App = () => {
-  return (
-    <div className="app">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-        <Footer />
-      </main>
-    </div>
-  );
+    return (
+        <div className="app">
+            <Header />
+            <main>
+                <Hero />
+                <About />
+                <Projects />
+                <Contact />
+                <Footer />
+            </main>
+        </div>
+    );
 };
 
 ReactDOM.render(<App />, document.getElementById("app"));
