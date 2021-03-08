@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Header = () => {
+const Nav = () => {
   const [toggle, setToggle] = useState(false)
 
   const openSideNav = (e) => {
@@ -35,4 +35,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Nav
