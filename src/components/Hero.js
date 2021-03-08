@@ -1,6 +1,8 @@
 import React from 'react'
 import BGHero from '../../public/images/bg-hero.svg'
 import WebDevImage from '../../public/images/undraw_web_developer_p3e5.svg'
+import { motion } from 'framer-motion'
+import { heroTextAnimation, heroTextContainer, fadeIn } from '../animation'
 
 const Hero = () => {
   return (
@@ -13,15 +15,24 @@ const Hero = () => {
           className="hero-image"
         />
       </div>
-      <div className="hero-text">
-        <h1>Hi there</h1>
-        <h2>
-          I'm Nice and I'm a <br /> Software Engineer Student
-        </h2>
-        <a className="btn" href="#contact">
+      <motion.div
+        variants={heroTextContainer}
+        animate="show"
+        initial="hidden"
+        className="hero-text"
+      >
+        <div className="hide">
+          <motion.h1 variants={heroTextAnimation}>Hi there</motion.h1>
+        </div>
+        <div className="hide">
+          <motion.h2 variants={heroTextAnimation}>
+            I'm Nice and I'm a <br /> Software Engineer Student
+          </motion.h2>
+        </div>
+        <motion.a variants={fadeIn} className="btn" href="#contact">
           Contact Me
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
     </div>
   )
 }

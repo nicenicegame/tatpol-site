@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { navAnimation, navItemAnimation } from '../animation'
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false)
@@ -9,29 +11,29 @@ const Nav = () => {
   }
 
   return (
-    <header>
+    <motion.header variants={navAnimation} initial="hidden" animate="show">
       <a href="#" className="logo">
         Tatpol S.
       </a>
       <nav>
         <ul className={toggle ? 'open-nav' : ''}>
-          <li>
+          <motion.li variants={navItemAnimation}>
             <a href="#about">About</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={navItemAnimation}>
             <a href="#projects">Projects</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={navItemAnimation}>
             <a href="#contact">Contact</a>
-          </li>
+          </motion.li>
         </ul>
       </nav>
-      <div className="hamburger" onClick={openSideNav}>
+      <motion.div className="hamburger" onClick={openSideNav}>
         <div className="line line1"></div>
         <div className="line line2"></div>
         <div className="line line3"></div>
-      </div>
-    </header>
+      </motion.div>
+    </motion.header>
   )
 }
 

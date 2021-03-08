@@ -46,6 +46,10 @@ section {
   padding: 2em;
 }
 
+.hide {
+  overflow: hidden;
+}
+
 @import './nav';
 @import './about';
 @import './contact';
