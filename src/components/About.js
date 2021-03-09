@@ -1,32 +1,50 @@
 import React from 'react'
 import DevActivity from '../../public/images/undraw_developer_activity_bv83.svg'
+import {
+  aboutContainer,
+  aboutTextAnimation,
+  heroTextAnimation,
+  slideRight,
+} from '../animation'
+import { useScroll } from '../hooks/useScroll'
+import { motion } from 'framer-motion'
 
 const About = () => {
+  const [element, controls] = useScroll()
+
   return (
-    <section className="about" id="about">
-      <div className="about-images">
+    <motion.section
+      className="about"
+      id="about"
+      ref={element}
+      animate={controls}
+      variants={aboutContainer}
+    >
+      <motion.div className="about-images" variants={slideRight}>
         <img src={DevActivity} alt="dev activity" />
-      </div>
-      <div className="about-text">
-        <h1>About Me</h1>
-        <p>
+      </motion.div>
+      <motion.div variants={aboutContainer} className="about-text">
+        <div className="hide">
+          <motion.h1 variants={heroTextAnimation}>About Me</motion.h1>
+        </div>
+        <motion.p variants={aboutTextAnimation}>
           Hi, My name is Tatpol Samakpong. Nickname is Nice. 2nd-year Software
           Engineer Student of Kasetsart University.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p variants={aboutTextAnimation}>
           I'm interested in both <span>front-end </span>and
           <span> back-end </span> web development. My favourite programming
           languages are <span>Python, Java, and JavaScript.</span> The
           frameworks that I familiar with are
           <span> Django, React, Angular, and Node.js.</span>
-        </p>
-        <p>
+        </motion.p>
+        <motion.p variants={aboutTextAnimation}>
           In free time, I like to watch movies, listening to music, and I
           usually learn coding from Youtube video. I'm a fast learner and
           willing to do new things.
-        </p>
-      </div>
-    </section>
+        </motion.p>
+      </motion.div>
+    </motion.section>
   )
 }
 

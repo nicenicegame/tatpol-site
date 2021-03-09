@@ -33,8 +33,13 @@ export const heroTextAnimation = {
   show: { y: 0, transition: { ease: 'easeOut', duration: 0.4 } },
 }
 
-export const heroImgAnimation = {
+export const slideLeft = {
   hidden: { x: '50%', opacity: 0 },
+  show: { x: 0, opacity: 1 },
+}
+
+export const slideRight = {
+  hidden: { x: '-50%', opacity: 0 },
   show: { x: 0, opacity: 1 },
 }
 
@@ -46,4 +51,17 @@ export const heroImgContainer = {
 export const fadeIn = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { duration: 0.75 } },
+}
+
+export const aboutContainer = {
+  hidden: { opacity: 1 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.3 },
+  },
+}
+
+export const aboutTextAnimation = {
+  hidden: { scale: 0, opacity: 0 },
+  show: { scale: 1, opacity: 1 },
 }

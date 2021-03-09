@@ -6,7 +6,7 @@ import {
   heroTextAnimation,
   heroTextContainer,
   fadeIn,
-  heroImgAnimation,
+  slideLeft,
   heroImgContainer,
 } from '../animation'
 
@@ -26,7 +26,7 @@ const Hero = () => {
           className="bg-hero"
         />
         <motion.img
-          variants={heroImgAnimation}
+          variants={slideLeft}
           src={WebDevImage}
           alt="web developer image"
           className="hero-image"
