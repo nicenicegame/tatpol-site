@@ -2,19 +2,36 @@ import React from 'react'
 import BGHero from '../../public/images/bg-hero.svg'
 import WebDevImage from '../../public/images/undraw_web_developer_p3e5.svg'
 import { motion } from 'framer-motion'
-import { heroTextAnimation, heroTextContainer, fadeIn } from '../animation'
+import {
+  heroTextAnimation,
+  heroTextContainer,
+  fadeIn,
+  heroImgAnimation,
+  heroImgContainer,
+} from '../animation'
 
 const Hero = () => {
   return (
     <div className="hero">
-      <div className="hero-images">
-        <img src={BGHero} alt="bg hero" className="bg-hero" />
-        <img
+      <motion.div
+        variants={heroImgContainer}
+        initial="hidden"
+        animate="show"
+        className="hero-images"
+      >
+        <motion.img
+          variants={fadeIn}
+          src={BGHero}
+          alt="bg hero"
+          className="bg-hero"
+        />
+        <motion.img
+          variants={heroImgAnimation}
           src={WebDevImage}
           alt="web developer image"
           className="hero-image"
         />
-      </div>
+      </motion.div>
       <motion.div
         variants={heroTextContainer}
         animate="show"
