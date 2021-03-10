@@ -1,11 +1,6 @@
 import React from 'react'
 import DevActivity from '../../public/images/undraw_developer_activity_bv83.svg'
-import {
-  aboutContainer,
-  aboutTextAnimation,
-  heroTextAnimation,
-  slideRight,
-} from '../animation'
+import { aboutContainer, aboutTextAnimation, slideRight } from '../animation'
 import { useScroll } from '../hooks/useScroll'
 import { motion } from 'framer-motion'
 
@@ -24,9 +19,7 @@ const About = () => {
         <img src={DevActivity} alt="dev activity" />
       </motion.div>
       <motion.div variants={aboutContainer} className="about-text">
-        <div className="hide">
-          <motion.h1 variants={heroTextAnimation}>About Me</motion.h1>
-        </div>
+        <motion.h1 variants={aboutTextAnimation}>About Me</motion.h1>
         <motion.p variants={aboutTextAnimation}>
           Hi, My name is Tatpol Samakpong. Nickname is Nice. 2nd-year Software
           Engineer Student of Kasetsart University.

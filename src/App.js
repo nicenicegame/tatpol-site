@@ -1,5 +1,4 @@
 import React from 'react'
-import { AnimatePresence } from 'framer-motion'
 import './scss/main.scss'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -10,7 +9,7 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <AnimatePresence>
+    <>
       <Nav />
       <main>
         <Hero />
@@ -19,7 +18,7 @@ const App = () => {
         <Contact />
         <Footer />
       </main>
-    </AnimatePresence>
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ import BGHero from '../../public/images/bg-hero.svg'
 import WebDevImage from '../../public/images/undraw_web_developer_p3e5.svg'
 import { motion } from 'framer-motion'
 import {
-  heroTextAnimation,
+  hideTextAnimation,
   heroTextContainer,
   fadeIn,
   slideLeft,
@@ -39,11 +39,16 @@ const Hero = () => {
         className="hero-text"
       >
         <div className="hide">
-          <motion.h1 variants={heroTextAnimation}>Hi there</motion.h1>
+          <motion.h1 variants={hideTextAnimation}>Hi there</motion.h1>
         </div>
         <div className="hide">
-          <motion.h2 variants={heroTextAnimation}>
-            I'm Nice and I'm a <br /> Software Engineer Student
+          <motion.h2 variants={hideTextAnimation}>
+            I'm <span>Nice</span> and I'm a
+          </motion.h2>
+        </div>
+        <div className="hide">
+          <motion.h2 variants={hideTextAnimation}>
+            Software Engineering Student
           </motion.h2>
         </div>
         <motion.a variants={fadeIn} className="btn" href="#contact">

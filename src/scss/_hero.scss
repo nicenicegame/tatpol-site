@@ -30,9 +30,13 @@
     }
 
     h2 {
-      font-size: 26px;
+      font-size: 20px;
       font-weight: 400;
       padding-top: 0.5em;
+
+      span {
+        color: $primary-color;
+      }
     }
 
     a {
@@ -44,7 +48,7 @@
       color: white;
       transition: background 0.2s ease-in-out;
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
 
       &:hover {
         background: $neutral;
@@ -106,10 +110,6 @@
         font-size: 50px;
       }
 
-      h2 {
-        font-size: 28px;
-      }
-
       a {
         font-size: 16px;
       }
@@ -124,10 +124,6 @@
 
       h1 {
         font-size: 60px;
-      }
-
-      h2 {
-        font-size: 30px;
       }
 
       a {

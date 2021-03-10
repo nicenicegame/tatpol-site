@@ -1,4 +1,5 @@
 .hamburger {
+  z-index: 5;
   cursor: pointer;
 
   .line {
@@ -45,8 +46,8 @@ header {
     position: fixed;
     width: 60%;
     background: $secondary-color;
-    height: 90vh;
-    bottom: 0;
+    height: 100vh;
+    top: 0;
     right: 0;
     padding: 3em 0;
     transform: translateX(100%);
@@ -68,6 +69,20 @@ header {
       }
     }
   }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.backdrop.active {
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: all;
 }
 
 .open-nav {

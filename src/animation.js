@@ -16,21 +16,37 @@ export const navItemAnimation = {
   show: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
 }
 
+export const toggleNavAnimation = {
+  close: {
+    x: '100%',
+    opacity: 0,
+    transition: { ease: 'easeOut', duration: 0.4 },
+  },
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      ease: 'easeOut',
+      duration: 0.4,
+    },
+  },
+}
+
 export const heroTextContainer = {
   hidden: { opacity: 1 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4,
+      staggerChildren: 0.2,
       when: 'beforeChildren',
       duration: 0.75,
     },
   },
 }
 
-export const heroTextAnimation = {
+export const hideTextAnimation = {
   hidden: { y: '100%' },
-  show: { y: 0, transition: { ease: 'easeOut', duration: 0.4 } },
+  show: { y: 0, transition: { ease: 'easeOut', duration: 0.5 } },
 }
 
 export const slideLeft = {
@@ -54,14 +70,14 @@ export const fadeIn = {
 }
 
 export const aboutContainer = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 1, transition: { staggerChildren: 0.2 } },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.3 },
+    transition: { staggerChildren: 0.2 },
   },
 }
 
 export const aboutTextAnimation = {
-  hidden: { scale: 0, opacity: 0 },
-  show: { scale: 1, opacity: 1 },
+  hidden: { x: 50, opacity: 0 },
+  show: { x: 0, opacity: 1, transition: { duration: 0.4 } },
 }

@@ -5,9 +5,12 @@ import { navAnimation, navItemAnimation } from '../animation'
 const Nav = () => {
   const [toggle, setToggle] = useState(false)
 
-  const openSideNav = (e) => {
+  const toggleNav = () => {
     setToggle(!toggle)
-    e.target.classList.toggle('active')
+  }
+
+  const closeNav = () => {
+    setToggle(false)
   }
 
   return (
@@ -16,19 +19,32 @@ const Nav = () => {
         Tatpol S.
       </a>
       <nav>
+        <div
+          className={`backdrop ${toggle ? 'active' : ''}`}
+          onClick={toggleNav}
+        ></div>
         <ul className={toggle ? 'open-nav' : ''}>
           <motion.li variants={navItemAnimation}>
-            <a href="#about">About</a>
+            <a onClick={closeNav} href="#about">
+              About
+            </a>
           </motion.li>
           <motion.li variants={navItemAnimation}>
-            <a href="#projects">Projects</a>
+            <a onClick={closeNav} href="#projects">
+              Projects
+            </a>
           </motion.li>
           <motion.li variants={navItemAnimation}>
-            <a href="#contact">Contact</a>
+            <a onClick={closeNav} href="#contact">
+              Contact
+            </a>
           </motion.li>
         </ul>
       </nav>
-      <motion.div className="hamburger" onClick={openSideNav}>
+      <motion.div
+        className={`hamburger ${toggle ? 'active' : ''}`}
+        onClick={toggleNav}
+      >
         <div className="line line1"></div>
         <div className="line line2"></div>
         <div className="line line3"></div>
