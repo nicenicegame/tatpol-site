@@ -58,7 +58,7 @@ const Projects = () => {
             return (
               <div className="projects-card" key={index}>
                 <a href={project.link} target="_blank">
-                  <i class="fas fa-external-link-alt"></i>
+                  <i className="fas fa-external-link-alt"></i>
                 </a>
                 <h4>{project.name}</h4>
                 <span>{project.responsibility}</span>

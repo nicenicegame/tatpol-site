@@ -10,28 +10,28 @@ const Contact = () => {
         <div className="contact-text">
           <a className="contact-row" href="https://github.com/nicenicegame">
             <p>GitHub</p>
-            <i class="fab fa-github"></i>
+            <i className="fab fa-github"></i>
           </a>
           <a
             className="contact-row"
             href="https://www.linkedin.com/in/tatpol-samakpong-1966291b7/"
           >
             <p>LinkedIn</p>
-            <i class="fab fa-linkedin"></i>
+            <i className="fab fa-linkedin"></i>
           </a>
           <a
             className="contact-row"
             href="https://www.facebook.com/tatpol.samakpong/"
           >
             <p>Facebook</p>
-            <i class="fab fa-facebook"></i>
+            <i className="fab fa-facebook"></i>
           </a>
           <a
             className="contact-row"
             href="https://www.instagram.com/nicenicegame/"
           >
             <p>Instagram</p>
-            <i class="fab fa-instagram"></i>
+            <i className="fab fa-instagram"></i>
           </a>
         </div>
       </div>

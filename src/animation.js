@@ -50,13 +50,13 @@ export const hideTextAnimation = {
 }
 
 export const slideLeft = {
-  hidden: { x: '50%', opacity: 0 },
-  show: { x: 0, opacity: 1 },
+  hidden: { x: '50%', opacity: 0, transition: { ease: 'easeOut' } },
+  show: { x: 0, opacity: 1, transition: { ease: 'easeOut' } },
 }
 
 export const slideRight = {
-  hidden: { x: '-50%', opacity: 0 },
-  show: { x: 0, opacity: 1 },
+  hidden: { x: '-50%', opacity: 0, transition: { ease: 'easeOut' } },
+  show: { x: 0, opacity: 1, transition: { ease: 'easeOut' } },
 }
 
 export const heroImgContainer = {
@@ -78,6 +78,6 @@ export const aboutContainer = {
 }
 
 export const aboutTextAnimation = {
-  hidden: { x: 50, opacity: 0 },
+  hidden: { x: 20, opacity: 0 },
   show: { x: 0, opacity: 1, transition: { duration: 0.4 } },
 }

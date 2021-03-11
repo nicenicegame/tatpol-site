@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <section className="footer">
       <a href="#">
-        Go to top <i class="fas fa-arrow-alt-circle-up"></i>
+        Go to top <i className="fas fa-arrow-alt-circle-up"></i>
       </a>
       <p>Tatpol Samakpong &copy; 2020</p>
     </section>

@@ -78,6 +78,7 @@ header {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .backdrop.active {
