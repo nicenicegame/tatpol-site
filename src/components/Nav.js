@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { navAnimation, navItemAnimation } from '../animation'
 
 const Nav = () => {
-  const [toggle, setToggle] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleNav = () => {
-    setToggle(!toggle)
+    setIsOpen(!isOpen)
   }
 
   const closeNav = () => {
-    setToggle(false)
+    setIsOpen(false)
   }
 
   return (
@@ -20,10 +20,10 @@ const Nav = () => {
       </a>
       <nav>
         <div
-          className={`backdrop ${toggle ? 'active' : ''}`}
-          onClick={toggleNav}
+          className={`backdrop ${isOpen ? 'active' : ''}`}
+          onClick={closeNav}
         ></div>
-        <ul className={toggle ? 'open-nav' : ''}>
+        <ul className={isOpen ? 'open-nav' : ''}>
           <motion.li variants={navItemAnimation}>
             <a onClick={closeNav} href="#about">
               About
@@ -42,7 +42,7 @@ const Nav = () => {
         </ul>
       </nav>
       <motion.div
-        className={`hamburger ${toggle ? 'active' : ''}`}
+        className={`hamburger ${isOpen ? 'active' : ''}`}
         onClick={toggleNav}
       >
         <div className="line line1"></div>
