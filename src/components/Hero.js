@@ -1,14 +1,14 @@
-import React from "react"
-import BGHero from "../../static/bg-hero.svg"
-import WebDevImage from "../../static/undraw_web_developer_p3e5.svg"
-import { motion } from "framer-motion"
+import React from 'react'
+import BGHero from '../../static/bg-hero.svg'
+import WebDevImage from '../../static/undraw_web_developer_p3e5.svg'
+import { motion } from 'framer-motion'
 import {
   hideTextAnimation,
   heroTextContainer,
   fadeIn,
   slideLeft,
   heroImgContainer,
-} from "../animation"
+} from '../animation'
 
 const Hero = () => {
   return (

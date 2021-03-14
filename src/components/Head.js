@@ -1,5 +1,5 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from 'react'
+import { Helmet } from 'react-helmet'
 
 const Head = () => {
   return (
@@ -15,11 +15,6 @@ const Head = () => {
         that I familiar with are Django, React, Angular, and Node.js."
       />
       <meta name="robots" content="index, follow" />
-      <link
-        rel="icon"
-        type="image/png"
-        href="../public/images/code-solid.svg"
-      />
 
       <script
         src="https://kit.fontawesome.com/2f1a6e5d18.js"

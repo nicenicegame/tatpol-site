@@ -1,5 +1,5 @@
-import React from "react"
-import Tatpol from "../../static/IMG_2127.jpg"
+import React from 'react'
+import Tatpol from '../../static/IMG_2127.jpg'
 
 const Contact = () => {
   return (

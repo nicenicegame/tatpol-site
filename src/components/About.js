@@ -1,8 +1,8 @@
-import React from "react"
-import DevActivity from "../../static/undraw_developer_activity_bv83.svg"
-import { aboutContainer, aboutTextAnimation, slideRight } from "../animation"
-import { useScroll } from "../hooks/useScroll"
-import { motion } from "framer-motion"
+import React from 'react'
+import DevActivity from '../../static/undraw_developer_activity_bv83.svg'
+import { aboutContainer, aboutTextAnimation, slideRight } from '../animation'
+import { useScroll } from '../hooks/useScroll'
+import { motion } from 'framer-motion'
 
 const About = () => {
   const [element, controls] = useScroll()

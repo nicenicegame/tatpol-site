@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (

@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { motion } from "framer-motion"
-import { navAnimation, navItemAnimation } from "../animation"
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { navAnimation, navItemAnimation } from '../animation'
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,11 +20,11 @@ const Nav = () => {
       </a>
       <nav>
         <div
-          className={`backdrop ${isOpen ? "active" : ""}`}
+          className={`backdrop ${isOpen ? 'active' : ''}`}
           role="button"
           onClick={closeNav}
         ></div>
-        <ul className={isOpen ? "open-nav" : ""}>
+        <ul className={isOpen ? 'open-nav' : ''}>
           <motion.li variants={navItemAnimation}>
             <a onClick={closeNav} href="#about" role="button">
               About
@@ -43,7 +43,7 @@ const Nav = () => {
         </ul>
       </nav>
       <motion.div
-        className={`hamburger ${isOpen ? "active" : ""}`}
+        className={`hamburger ${isOpen ? 'active' : ''}`}
         onClick={toggleNav}
         role="button"
       >
