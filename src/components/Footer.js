@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react"
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   return (
     <section className="footer">
-      <a href="#">
+      <button onClick={scrollToTop}>
         Go to top <i className="fas fa-arrow-alt-circle-up"></i>
-      </a>
+      </button>
       <p>Tatpol Samakpong &copy; 2020</p>
     </section>
   )
