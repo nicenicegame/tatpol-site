@@ -1,19 +1,25 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 const Head = () => {
+  const data = useStaticQuery(graphql`
+    query SiteInfo {
+      site {
+        siteMetadata {
+          title
+          description
+        }
+      }
+    }
+  `)
+  const { title, description } = data.site.siteMetadata
+
   return (
     <Helmet>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta
-        name="description"
-        content="Hi, My name is Tatpol Samakpong. Nickname is Nice. 2nd-year
-        Software Engineer Student of Kasetsart University. I'm interested in both front-end and back-end web development. My favourite 
-        programming languages are
-        Python, Java, and JavaScript. The frameworks
-        that I familiar with are Django, React, Angular, and Node.js."
-      />
+      <meta name="description" content={description} />
       <meta name="robots" content="index, follow" />
 
       <script
@@ -21,7 +27,7 @@ const Head = () => {
         crossorigin="anonymous"
       ></script>
 
-      <title>nicenicegame's Portfolio</title>
+      <title>{title}</title>
     </Helmet>
   )
 }

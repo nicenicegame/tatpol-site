@@ -7,6 +7,7 @@
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
@@ -19,5 +20,17 @@ module.exports = {
         icon: 'static/favicon.svg',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/projects/`,
+      },
+    },
   ],
+  siteMetadata: {
+    title: "Tatpol's Portfolio",
+    description: 'Tatpol Samakpong Portfolio - Software Engineering Student',
+    copyright: 'This website is copyright 2021 Tatpol Samakpong',
+  },
 }

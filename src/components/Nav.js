@@ -23,7 +23,10 @@ const Nav = () => {
           className={`backdrop ${isOpen ? 'active' : ''}`}
           role="button"
           onClick={closeNav}
-        ></div>
+          onKeyDown={closeNav}
+          aria-label="Close"
+          tabIndex={0}
+        />
         <ul className={isOpen ? 'open-nav' : ''}>
           <motion.li variants={navItemAnimation}>
             <a onClick={closeNav} href="#about" role="button">
