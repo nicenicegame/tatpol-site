@@ -3,24 +3,25 @@
   cursor: pointer;
 
   .line {
-    margin: 3px;
+    margin: 4px;
     width: 25px;
-    height: 3px;
+    height: 2px;
     background: black;
     pointer-events: none;
-    transition: all 0.2s ease-out;
+    transition: all 0.3s ease-out;
   }
 
   &.active > .line2 {
     opacity: 0;
+    width: 0%;
   }
 
   &.active > .line1 {
-    transform: rotate(45deg) translateY(8px);
+    transform: rotate(45deg) translateY(8.5px);
   }
 
   &.active > .line3 {
-    transform: rotate(-45deg) translateY(-8px);
+    transform: rotate(-45deg) translateY(-8.5px);
   }
 }
 
@@ -51,8 +52,7 @@ header {
     right: 0;
     padding: 3em 0;
     transform: translateX(100%);
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out, transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-out;
 
     li {
       padding: 3em;
@@ -79,7 +79,7 @@ header {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .backdrop.active {
@@ -89,7 +89,6 @@ header {
 
 .open-nav {
   transform: translateX(0);
-  opacity: 1;
 }
 
 @media screen and (min-width: 500px) {
