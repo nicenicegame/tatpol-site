@@ -13,8 +13,7 @@ const About = () => {
       id="about"
       ref={element}
       animate={controls}
-      variants={aboutContainer}
-    >
+      variants={aboutContainer}>
       <motion.div className="about-images" variants={slideRight}>
         <img src={DevActivity} alt="dev activity" />
       </motion.div>
