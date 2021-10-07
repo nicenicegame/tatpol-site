@@ -1,0 +1,45 @@
+.experience {
+  width: 100%;
+  padding: 4rem 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+.exp-text {
+  font-size: 100px;
+  text-align: right;
+}
+
+.line {
+  height: 250px;
+  width: 10px;
+  background-color: $color3;
+  position: absolute;
+}
+
+.work-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 4rem;
+
+  .work-img {
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+  }
+
+  .work-text {
+    padding-left: 3rem;
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    .role {
+      color: $color3;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.hero {
+  min-height: 85vh;
+  padding: 4rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .hero-text {
+    flex: 1;
+    color: white;
+
+    button {
+      margin-top: 2rem;
+      font-size: $text-size;
+    }
+  }
+
+  .hero-img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    img {
+      position: relative;
+      z-index: 1;
+      width: 300px;
+      height: 300px;
+      border-radius: 100%;
+      border: 8px solid $color1;
+    }
+
+    .circle {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 100%;
+      background-color: $color3;
+    }
+  }
+}

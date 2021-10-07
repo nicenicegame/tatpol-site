@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@700&family=Sofia&display=swap');
+
+@import './partials/variables';
+
+@import './components/navbar';
+@import './components/hero';
+@import './components/experience';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+a {
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  font-size: $heading1-size;
+}
+
+h2 {
+  font-size: $heading2-size;
+}
+
+h3 {
+  font-size: $heading3-size;
+}
+
+h4 {
+  font-size: $heading4-size;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background-color: $color1;
+  color: white;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.button {
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  padding: 0.25rem 0.75rem;
+  color: $color3;
+  background-color: transparent;
+  border: none;
+  border: 2px solid $color3;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-color: $color4;
+    color: $color4;
+  }
+}
+
+.text-primary {
+  color: $color3;
+}
+
+.text-shadow {
+  text-shadow: -1px 0 $color3, 0 1px $color3, 1px 0 $color3, 0 -1px $color3;
+  color: $color1;
+  user-select: none;
+}

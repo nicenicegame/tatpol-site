@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 15vh;
+  width: 100%;
+
+  .nav-logo {
+    text-transform: lowercase;
+    font-size: $heading3-size;
+    color: $color4;
+    font-family: 'Sofia', cursive;
+  }
+
+  .nav-items {
+    display: flex;
+    list-style: none;
+
+    li {
+      margin-left: 1.5rem;
+
+      a {
+        color: $color3;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: $color4;
+        }
+      }
+    }
+  }
+}

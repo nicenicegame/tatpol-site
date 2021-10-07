@@ -1,60 +1,25 @@
 import React from 'react'
-import BGHero from '../../static/bg-hero.svg'
-import WebDevImage from '../../static/undraw_web_developer_p3e5.svg'
-import { motion } from 'framer-motion'
-import {
-  hideTextAnimation,
-  heroTextContainer,
-  fadeIn,
-  slideLeft,
-  heroImgContainer,
-} from '../animation'
+import { useViewportScroll, motion, useTransform } from 'framer-motion'
 
 const Hero = () => {
+  const { scrollY } = useViewportScroll()
+  const yDown = useTransform(scrollY, [0, 300], [40, 60])
+  const yUp = useTransform(scrollY, [0, 300], [0, -100])
+
   return (
-    <div className="hero">
-      <motion.div
-        variants={heroImgContainer}
-        initial="hidden"
-        animate="show"
-        className="hero-images"
-      >
-        <motion.img
-          variants={fadeIn}
-          src={BGHero}
-          alt="bg hero"
-          className="bg-hero"
-        />
-        <motion.img
-          variants={slideLeft}
-          src={WebDevImage}
-          alt="web developer image"
-          className="hero-image"
-        />
+    <div className="container hero">
+      <motion.div className="hero-text" style={{ y: yUp }}>
+        <h3>Hello,</h3>
+        <h1>
+          I&apos;m <span className="text-primary">Tatpol</span> Samakpong
+        </h1>
+        <p>Software Engineering Student</p>
+        <button className="button">Contact Me</button>
       </motion.div>
-      <motion.div
-        variants={heroTextContainer}
-        animate="show"
-        initial="hidden"
-        className="hero-text"
-      >
-        <div className="hide">
-          <motion.h1 variants={hideTextAnimation}>Hi there</motion.h1>
-        </div>
-        <div className="hide">
-          <motion.h2 variants={hideTextAnimation}>
-            I'm <span>Nice</span> and I'm a
-          </motion.h2>
-        </div>
-        <div className="hide">
-          <motion.h2 variants={hideTextAnimation}>
-            Software Engineering Student
-          </motion.h2>
-        </div>
-        <motion.a variants={fadeIn} className="btn" href="#contact">
-          Contact Me
-        </motion.a>
-      </motion.div>
+      <div className="hero-img">
+        <motion.img src="Tatpol.jpg" alt="tatpol pic" style={{ y: yUp }} />
+        <motion.div className="circle" style={{ y: yDown, x: 90 }}></motion.div>
+      </div>
     </div>
   )
 }

@@ -17,20 +17,20 @@ module.exports = {
         short_name: 'Portfolio',
         start_url: '/',
         display: 'standalone',
-        icon: 'static/favicon.svg',
-      },
+        icon: 'static/favicon.svg'
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects/`,
-      },
-    },
+        path: `${__dirname}/src/projects/`
+      }
+    }
   ],
   siteMetadata: {
     title: "Tatpol's Portfolio",
     description: 'Tatpol Samakpong Portfolio - Software Engineering Student',
-    copyright: 'This website is copyright 2021 Tatpol Samakpong',
-  },
+    copyright: 'This website is copyright 2021 Tatpol Samakpong'
+  }
 }
