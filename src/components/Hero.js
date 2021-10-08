@@ -11,10 +11,10 @@ const heroAnimation = {
   show: {
     opacity: 1,
     transition: {
-      duration: 0.8,
+      duration: 0.4,
       ease: [0.6, 0.01, -0.05, 0.9],
-      delay: 0.25,
-      delayChildren: 0.4
+      when: 'beforeChildren',
+      delay: 0.4
     }
   }
 }
@@ -22,7 +22,7 @@ const heroAnimation = {
 const letters = {
   show: {
     transition: {
-      staggerChildren: 0.05
+      staggerChildren: 0.1
     }
   }
 }
@@ -50,7 +50,7 @@ const scrollDown = {
     transition: {
       ease: [0.6, 0.01, -0.05, 0.9],
       duration: 0.6,
-      delay: 0.8,
+      delay: 1,
       when: 'beforeChildren'
     }
   },
@@ -70,16 +70,29 @@ const scrollDownText = {
     opacity: 1,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.9],
-      duration: 0.4
+      duration: 0.6
     }
   },
   exit: {
     opacity: 0,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.9],
-      duration: 0.4
+      duration: 0.6
     }
   }
+}
+
+const heroTextContainer = {
+  show: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const heroTextAnimation = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.2 } }
 }
 
 const Hero = ({ windowScrollY }) => {
@@ -88,7 +101,7 @@ const Hero = ({ windowScrollY }) => {
 
   useEffect(() => {
     if (!isScrollExit) controls.start('show')
-    if (windowScrollY > 40 && !isScrollExit) {
+    if (windowScrollY > 50 && !isScrollExit) {
       controls.start('exit')
       setIsScrollExit(true)
     }
@@ -102,14 +115,16 @@ const Hero = ({ windowScrollY }) => {
         initial="hidden"
         animate="show">
         <ParallaxElement inputRange={[0, 300]} outputRange={[0, -100]}>
-          <motion.div className="hero-text">
-            <h3>Hello,</h3>
-            <h1 className="hide">
+          <motion.div className="hero-text" variants={heroTextContainer}>
+            <motion.h3 variants={heroTextAnimation}>Hello,</motion.h3>
+            <motion.h1 className="hide" variants={heroTextAnimation}>
               I&apos;m <AnimatedText text="Tatpol" coloredWord />{' '}
               <AnimatedText text="Samakpong" reversed />
-            </h1>
-            <p>Software Engineering Student</p>
-            <div className="button-group">
+            </motion.h1>
+            <motion.p variants={heroTextAnimation}>
+              Software Engineering Student
+            </motion.p>
+            <motion.div className="button-group" variants={heroTextAnimation}>
               <button className="button btn-primary">Contact Me</button>
               {/* <a
               href="Tatpol_ Resume.pdf"
@@ -117,7 +132,7 @@ const Hero = ({ windowScrollY }) => {
               rel="noopener noreferrer">
               <button className="button btn-secondary">Resume</button>
             </a> */}
-            </div>
+            </motion.div>
           </motion.div>
         </ParallaxElement>
         <div className="hero-img">
