@@ -67,17 +67,29 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 0.75px;
   padding: 0.25rem 0.75rem;
-  color: $color3;
   background-color: transparent;
   border: none;
-  border: 2px solid $color3;
+  border: 2px solid transparent;
   cursor: pointer;
   outline: none;
   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    border-color: $color4;
-    color: $color4;
+  &.btn-primary {
+    background-color: $color3;
+
+    &:hover {
+      background-color: $color4;
+    }
+  }
+
+  &.btn-secondary {
+    color: $color3;
+    border-color: $color3;
+
+    &:hover {
+      border-color: $color4;
+      color: $color4;
+    }
   }
 }
 
@@ -89,6 +101,11 @@ h4 {
   text-shadow: -1px 0 $color3, 0 1px $color3, 1px 0 $color3, 0 -1px $color3;
   color: $color1;
   user-select: none;
+  font-size: 100px;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .vuetify {

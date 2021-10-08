@@ -13,8 +13,8 @@ const ParallaxElement = ({
   isSpring,
   damping,
   stiffness,
-  className,
-  style
+  style,
+  ...props
 }) => {
   const { scrollY } = useViewportScroll()
   let y = useTransform(scrollY, inputRange, outputRange)
@@ -24,7 +24,7 @@ const ParallaxElement = ({
   }
 
   return (
-    <motion.div style={{ y, ...style }} className={className}>
+    <motion.div style={{ y, ...style }} {...props}>
       {children}
     </motion.div>
   )

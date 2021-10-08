@@ -1,38 +1,41 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import ParallaxElement from './ParallaxElement'
 
-const Experience = () => {
+const Experience = ({ sectionOffsetTop, setSectionOffsetTop }) => {
   const expRef = useRef(null)
-  const [offsetTop, setOffsetTop] = useState(0)
 
   useEffect(() => {
     if (expRef.current) {
-      setOffsetTop(expRef.current.offsetTop)
+      setSectionOffsetTop({
+        ...sectionOffsetTop,
+        experience: expRef.current.offsetTop
+      })
     }
   }, [expRef.current])
 
   return (
     <div className="container experience" ref={expRef}>
       <ParallaxElement
-        inputRange={[0, offsetTop]}
+        inputRange={[0, sectionOffsetTop.experience]}
         outputRange={[0, -100]}
         isSpring
         stiffness={800}
         damping={100}>
-        <h3 className="text-shadow exp-text">Experience</h3>
+        <h1 className="text-shadow text-right">Experience</h1>
       </ParallaxElement>
       <ParallaxElement
         className="line"
         style={{ x: -40 }}
-        inputRange={[200, offsetTop + 200]}
-        outputRange={[0, 200]}
+        inputRange={[0, sectionOffsetTop.experience + 200]}
+        outputRange={[0, 280]}
         isSpring
         stiffness={1000}
-        damping={100}></ParallaxElement>
+        damping={100}
+      />
       <ParallaxElement
-        inputRange={[0, offsetTop]}
-        outputRange={[0, -20]}
+        inputRange={[0, sectionOffsetTop.experience]}
+        outputRange={[0, -40]}
         isSpring
         stiffness={400}
         damping={100}>

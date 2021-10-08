@@ -4,6 +4,20 @@
   padding: 4rem 0;
 }
 
-.works-text {
-  font-size: 100px;
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 4rem 6rem;
+  gap: 1.5rem;
+
+  .works-item {
+    border: 2px solid $color3;
+    padding: 1.5rem 3rem;
+    border-radius: 3px;
+    grid-column: span 2;
+
+    &.big {
+      grid-column: span 3;
+    }
+  }
 }
