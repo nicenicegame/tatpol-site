@@ -3,6 +3,7 @@ import Head from '../components/Head'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Experience from '../components/Experience'
+import Works from '../components/Works'
 import '../sass/main.scss'
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Experience />
+      <Works />
     </div>
   )
 }

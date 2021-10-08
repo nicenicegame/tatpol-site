@@ -1,0 +1,7 @@
+{
+  "polyfill": ["/polyfill-070d6845c22e7508c17b.js"],
+  "app": ["/app-ba81d982e5c58b080a95.js"],
+  "component---src-pages-index-js": [
+    "/component---src-pages-index-js-7eeb0a3a2bb0395fa08d.js"
+  ]
+}

@@ -1,7 +1,7 @@
 .experience {
   width: 100%;
   padding: 4rem 0;
-  min-height: 100vh;
+  min-height: 50vh;
   position: relative;
 }
 
@@ -12,24 +12,17 @@
 
 .line {
   height: 250px;
-  width: 10px;
+  width: 15px;
   background-color: $color3;
+  border-radius: 2px;
   position: absolute;
 }
 
 .work-list {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding: 1rem 4rem;
-
-  .work-img {
-    img {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-    }
-  }
+  padding: 2rem;
 
   .work-text {
     padding-left: 3rem;
@@ -41,5 +34,23 @@
     .role {
       color: $color3;
     }
+
+    .date {
+      color: #bebebe;
+    }
+
+    .hashtag {
+      margin-top: 1.25rem;
+      span.pill {
+        user-select: none;
+        font-weight: 700;
+        padding: 4px 8px;
+        border-radius: 2rem;
+      }
+    }
   }
+}
+
+.dot-spacer {
+  margin: 0 0.4rem;
 }

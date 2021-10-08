@@ -8,6 +8,8 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-transformer-remark`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {

@@ -5,6 +5,7 @@
 @import './components/navbar';
 @import './components/hero';
 @import './components/experience';
+@import './components/works';
 
 * {
   margin: 0;
@@ -88,4 +89,23 @@ h4 {
   text-shadow: -1px 0 $color3, 0 1px $color3, 1px 0 $color3, 0 -1px $color3;
   color: $color1;
   user-select: none;
+}
+
+.vuetify {
+  background-color: rgb(23, 130, 244);
+  color: $color1;
+}
+
+.vue {
+  background-color: rgb(65, 175, 166);
+  color: $color1;
+}
+
+.vuex {
+  background-color: rgb(41, 55, 75);
+  color: white;
+}
+
+.hide {
+  overflow: hidden;
 }
