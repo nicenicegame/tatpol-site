@@ -130,12 +130,13 @@ const Hero = ({ windowScrollY }) => {
                 whileTap={{ scale: 1.1 }}>
                 Contact Me
               </motion.button>
-              {/* <a
-              href="Tatpol_ Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer">
-              <button className="button btn-secondary">Resume</button>
-            </a> */}
+              <motion.a
+                whileTap={{ scale: 1.1 }}
+                href="Tatpol_Samakpong.pdf"
+                target="_blank"
+                rel="noopener noreferrer">
+                <button className="button btn-secondary">Resume</button>
+              </motion.a>
             </motion.div>
           </ParallaxElement>
         </motion.div>
