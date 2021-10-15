@@ -5,7 +5,8 @@
 @import './components/navbar';
 @import './components/hero';
 @import './components/experience';
-@import './components/works';
+@import './components/projects';
+@import './components/contact';
 
 * {
   margin: 0;
@@ -106,6 +107,17 @@ h4 {
 
 .text-right {
   text-align: right;
+}
+
+.dot-spacer {
+  margin: 0 0.4rem;
+}
+
+.pill {
+  user-select: none;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 2rem;
 }
 
 .vuetify {

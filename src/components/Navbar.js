@@ -1,6 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+const navItems = [
+  { text: 'Experience' },
+  { text: 'Projects' },
+  { text: 'Contact' }
+]
+
 const navAnimation = {
   show: {
     y: 0,
@@ -25,15 +31,11 @@ const Navbar = () => {
         tatpol s.
       </a>
       <ul className="nav-items">
-        <li>
-          <a href="#">Experience</a>
-        </li>
-        <li>
-          <a href="#">Works</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
+        {navItems.map((item, itemIndex) => (
+          <li key={itemIndex}>
+            <a href="#">{item.text}</a>
+          </li>
+        ))}
       </ul>
     </motion.nav>
   )
