@@ -7,31 +7,28 @@ const Experience = ({ sectionOffsetTop, setSectionOffsetTop }) => {
 
   useEffect(() => {
     if (expRef.current) {
-      setSectionOffsetTop({
-        ...sectionOffsetTop,
+      setSectionOffsetTop((prevSectionOffsetTop) => ({
+        ...prevSectionOffsetTop,
         experience: expRef.current.offsetTop
-      })
+      }))
     }
   }, [expRef.current])
 
   return (
-    <div className="container experience" ref={expRef}>
+    <div className="container experience" ref={expRef} id="experience">
       <ParallaxElement
         inputRange={[0, sectionOffsetTop.experience]}
         outputRange={[0, -100]}
         isSpring
         stiffness={800}
         damping={100}>
-        <h1 className="text-shadow text-right">Experience</h1>
+        <h1 className="text-shadow text-right header-text">Experience</h1>
       </ParallaxElement>
       <ParallaxElement
         className="line"
         style={{ x: -40 }}
         inputRange={[0, sectionOffsetTop.experience + 200]}
-        outputRange={[0, 280]}
-        isSpring
-        stiffness={1000}
-        damping={100}
+        outputRange={[0, 400]}
       />
       <ParallaxElement
         inputRange={[0, sectionOffsetTop.experience]}
@@ -45,8 +42,8 @@ const Experience = ({ sectionOffsetTop, setSectionOffsetTop }) => {
               src="../images/sellsuki-intern.png"
               alt="sellsuki pic"
               placeholder="blurred"
-              width={150}
-              height={150}
+              width={120}
+              height={120}
               layout="fixed"
             />
           </div>

@@ -1,5 +1,5 @@
 ---
-link: https://github.com/nicenicegame/easybank-landing-page
+link: https://dooraidee.vercel.app/
 title: Dooraidee
 imageUrl: dooraidee-mobile.png
 isBig: true

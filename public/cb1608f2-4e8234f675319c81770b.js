@@ -1,3 +1,0 @@
-/*! For license information please see cb1608f2-4e8234f675319c81770b.js.LICENSE.txt */
-"use strict";(self.webpackChunknicenicegame_github_io=self.webpackChunknicenicegame_github_io||[]).push([[523],{8014:function(e,i,c){c.d(i,{MLj:function(){return n}});var n={prefix:"fas",iconName:"mouse",icon:[384,512,[],"f8cc","M0 352a160 160 0 0 0 160 160h64a160 160 0 0 0 160-160V224H0zM176 0h-16A160 160 0 0 0 0 160v32h176zm48 0h-16v192h176v-32A160 160 0 0 0 224 0z"]}}}]);
-//# sourceMappingURL=cb1608f2-4e8234f675319c81770b.js.map

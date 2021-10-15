@@ -114,8 +114,8 @@ const Hero = ({ windowScrollY }) => {
         variants={heroAnimation}
         initial="hidden"
         animate="show">
-        <ParallaxElement inputRange={[0, 300]} outputRange={[0, -100]}>
-          <motion.div className="hero-text" variants={heroTextContainer}>
+        <motion.div className="hero-text" variants={heroTextContainer}>
+          <ParallaxElement inputRange={[0, 300]} outputRange={[0, -100]}>
             <motion.h3 variants={heroTextAnimation}>Hello,</motion.h3>
             <motion.h1 className="hide" variants={heroTextAnimation}>
               I&apos;m <AnimatedText text="Tatpol" coloredWord />{' '}
@@ -125,7 +125,11 @@ const Hero = ({ windowScrollY }) => {
               Software Engineering Student
             </motion.p>
             <motion.div className="button-group" variants={heroTextAnimation}>
-              <button className="button btn-primary">Contact Me</button>
+              <motion.button
+                className="button btn-primary"
+                whileTap={{ scale: 1.1 }}>
+                Contact Me
+              </motion.button>
               {/* <a
               href="Tatpol_ Resume.pdf"
               target="_blank"
@@ -133,8 +137,8 @@ const Hero = ({ windowScrollY }) => {
               <button className="button btn-secondary">Resume</button>
             </a> */}
             </motion.div>
-          </motion.div>
-        </ParallaxElement>
+          </ParallaxElement>
+        </motion.div>
         <div className="hero-img">
           <ParallaxElement
             className="circle"
@@ -149,9 +153,6 @@ const Hero = ({ windowScrollY }) => {
               src="../images/Tatpol.jpg"
               alt="tatpol pic"
               placeholder="blurred"
-              width={300}
-              height={300}
-              layout="fixed"
             />
           </ParallaxElement>
         </div>

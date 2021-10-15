@@ -1,5 +1,5 @@
 ---
-link: https://github.com/nicenicegame/easybank-landing-page
+link: https://easybank-landing-page-pfma7z85h.vercel.app/
 title: EasyBank Landing Page
 imageUrl: easybank-landing-page.png
 responsibility: React, SCSS

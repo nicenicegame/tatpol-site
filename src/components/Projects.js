@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { useStaticQuery, graphql } from 'gatsby'
 import ParallaxElement from './ParallaxElement'
+import { useMediaQuery } from 'react-responsive'
+import { useScroll } from '../hooks/useScroll'
 
 const projectsContainer = {
   show: {
@@ -53,6 +55,11 @@ const mobileAnimation = {
 }
 
 const Projects = ({ setSectionOffsetTop, sectionOffsetTop }) => {
+  const isDisabledAnimation = useMediaQuery({ query: '(max-width: 900px)' })
+  const [projectsGridRef, controls] = useScroll({
+    threshold: 0.35,
+    triggerOnce: true
+  })
   const projectsRef = useRef(null)
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
@@ -79,45 +86,73 @@ const Projects = ({ setSectionOffsetTop, sectionOffsetTop }) => {
 
   useEffect(() => {
     if (projectsRef.current) {
-      setSectionOffsetTop({
-        ...sectionOffsetTop,
+      setSectionOffsetTop((prevSectionOffsetTop) => ({
+        ...prevSectionOffsetTop,
         projects: projectsRef.current.offsetTop
-      })
+      }))
     }
   }, [projectsRef.current])
 
   return (
-    <div className="container projects">
+    <div className="container projects" ref={projectsRef} id="projects">
       <ParallaxElement
         inputRange={[sectionOffsetTop.experience, sectionOffsetTop.projects]}
         outputRange={[0, -100]}
         isSpring
         stiffness={800}
         damping={100}>
-        <h1 className="text-shadow">Projects</h1>
+        <h1 className="text-shadow header-text">Projects</h1>
       </ParallaxElement>
-      <motion.div
-        className="projects-grid"
-        variants={projectsContainer}
-        animate="show"
-        initial="hidden">
-        <ProjectItem items={projects} />
-      </motion.div>
+      <ParallaxElement
+        inputRange={[sectionOffsetTop.experience, sectionOffsetTop.projects]}
+        outputRange={[0, -40]}
+        isSpring
+        stiffness={400}
+        damping={100}>
+        <motion.div
+          ref={projectsGridRef}
+          className="projects-grid"
+          variants={projectsContainer}
+          animate={controls}
+          initial="hidden">
+          <ProjectItem
+            items={projects}
+            isDisabledAnimation={isDisabledAnimation}
+          />
+        </motion.div>
+      </ParallaxElement>
     </div>
   )
 }
 
-const ProjectItem = ({ items }) => {
+const ProjectItem = ({ items, isDisabledAnimation }) => {
+  const getClassBySkill = (skill) => {
+    const color = {
+      React: 'react',
+      SCSS: 'scss',
+      Vue: 'vue',
+      Vuex: 'vuex',
+      'Framer Motion': 'framer-motion',
+      'Styled Components': 'styled-components'
+    }
+    return color[skill]
+  }
+
+  const openProjectLink = (link) => {
+    window.open(link, '_blank')
+  }
+
   return (
     <>
       {items.map((item, itemIndex) => (
         <motion.div
+          onClick={() => openProjectLink(item.link)}
           className={`projects-item ${item.isBig ? 'big' : null}`}
           variants={projectItem}
-          key={itemIndex}>
+          key={`project-${itemIndex}`}>
           <motion.div
             whileHover="animate"
-            initial="initial"
+            initial={isDisabledAnimation ? 'animate' : 'initial'}
             style={{ width: '100%', height: '100%' }}>
             <motion.img
               src={item.imageUrl}
@@ -138,15 +173,15 @@ const ProjectItem = ({ items }) => {
                     className="responsibility"
                     variants={projectDescription}>
                     {item.responsibility.split(',').map((r, rIndex) => (
-                      <>
-                        <span className="pill vue" key={rIndex}>
-                          {r}
+                      <span key={`r-${rIndex}`}>
+                        <span className={`pill ${getClassBySkill(r.trim())}`}>
+                          #{r.trim()}
                         </span>
                         {rIndex !==
                           item.responsibility.split(',').length - 1 && (
                           <span className="dot-spacer">&middot;</span>
                         )}
-                      </>
+                      </span>
                     ))}
                   </motion.p>
                 </div>

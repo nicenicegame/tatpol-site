@@ -21,7 +21,7 @@
 
       a {
         color: $color3;
-        transition: all 0.2s ease-in-out;
+        transition: color 0.2s ease-in-out;
 
         &:hover {
           color: $color4;
@@ -29,4 +29,62 @@
       }
     }
   }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative;
+  }
+
+  @media screen and (max-width: 500px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-items {
+      display: none;
+    }
+  }
+}
+
+.side-nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 80vw;
+  height: 100vh;
+  background-color: $color2;
+  z-index: 1000;
+
+  .nav-items {
+    list-style: none;
+
+    li {
+      padding: 2rem;
+
+      a {
+        padding: 4rem 1rem;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .close-nav {
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+  }
+}
+
+.side-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 999;
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@700&family=Sofia&display=swap');
 
 @import './partials/variables';
+@import './partials/classes';
 
 @import './components/navbar';
 @import './components/hero';
@@ -14,6 +15,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -22,6 +29,11 @@ a {
 p,
 a {
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
+
+  @media screen and (max-width: 970px) {
+    font-size: 14px;
+  }
 }
 
 h1,
@@ -35,106 +47,44 @@ button {
 }
 
 h1 {
-  font-size: $heading1-size;
+  font-size: 50px;
+  @media screen and (max-width: 970px) {
+    font-size: 44px;
+  }
+
+  @media screen and (max-width: 470px) {
+    font-size: 36px;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 32px;
+  }
 }
 
 h2 {
-  font-size: $heading2-size;
+  font-size: 40px;
+  @media screen and (max-width: 970px) {
+    font-size: 32px;
+  }
+
+  @media screen and (max-width: 470px) {
+    font-size: 26px;
+  }
 }
 
 h3 {
-  font-size: $heading3-size;
+  font-size: 30px;
+  @media screen and (max-width: 970px) {
+    font-size: 22px;
+  }
+  @media screen and (max-width: 470px) {
+    font-size: 20px;
+  }
 }
 
 h4 {
-  font-size: $heading4-size;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  background-color: $color1;
-  color: white;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.button {
-  text-transform: uppercase;
-  letter-spacing: 0.75px;
-  padding: 0.25rem 0.75rem;
-  background-color: transparent;
-  border: none;
-  border: 2px solid transparent;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.2s ease-in-out;
-
-  &.btn-primary {
-    background-color: $color3;
-
-    &:hover {
-      background-color: $color4;
-    }
+  font-size: 20px;
+  @media screen and (max-width: 970px) {
+    font-size: 18px;
   }
-
-  &.btn-secondary {
-    color: $color3;
-    border-color: $color3;
-
-    &:hover {
-      border-color: $color4;
-      color: $color4;
-    }
-  }
-}
-
-.text-primary {
-  color: $color3;
-}
-
-.text-shadow {
-  text-shadow: -1px 0 $color3, 0 1px $color3, 1px 0 $color3, 0 -1px $color3;
-  color: $color1;
-  user-select: none;
-  font-size: 100px;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.dot-spacer {
-  margin: 0 0.4rem;
-}
-
-.pill {
-  user-select: none;
-  font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 2rem;
-}
-
-.vuetify {
-  background-color: rgb(23, 130, 244);
-  color: $color1;
-}
-
-.vue {
-  background-color: rgb(65, 175, 166);
-  color: $color1;
-}
-
-.vuex {
-  background-color: rgb(41, 55, 75);
-  color: white;
-}
-
-.hide {
-  overflow: hidden;
 }

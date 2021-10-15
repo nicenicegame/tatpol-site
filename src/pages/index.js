@@ -20,6 +20,7 @@ const App = () => {
   }
 
   useEffect(() => {
+    setWindowScrollY(window.scrollY)
     window.addEventListener('scroll', updateScrollY, { passive: true })
 
     return () => window.removeEventListener('scroll', updateScrollY)

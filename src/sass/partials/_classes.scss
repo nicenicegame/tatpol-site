@@ -1,0 +1,112 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  background-color: $color1;
+  color: white;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.button {
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  padding: 0.25rem 0.75rem;
+  background-color: transparent;
+  border: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+  &.btn-primary {
+    background-color: $color3;
+
+    &:hover {
+      background-color: $color4;
+    }
+  }
+
+  &.btn-secondary {
+    color: $color3;
+    border-color: $color3;
+
+    &:hover {
+      border-color: $color4;
+      color: $color4;
+    }
+  }
+}
+
+.text-primary {
+  color: $color3;
+}
+
+.text-shadow {
+  text-shadow: -1px 0 $color3, 0 1px $color3, 1px 0 $color3, 0 -1px $color3;
+  color: $color1;
+  user-select: none;
+  font-size: 100px;
+
+  @media screen and (max-width: 700px) {
+    font-size: 60px;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hide {
+  overflow: hidden;
+}
+
+.dot-spacer {
+  margin: 0 0.4rem;
+}
+
+.pill {
+  user-select: none;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 2rem;
+}
+
+.vuetify {
+  background-color: rgb(23, 130, 244);
+  color: white;
+}
+
+.vue {
+  background-color: rgb(65, 175, 166);
+  color: black;
+}
+
+.vuex {
+  background-color: rgb(41, 55, 75);
+  color: white;
+}
+
+.react {
+  background-color: #61dbfb;
+  color: black;
+}
+
+.styled-components {
+  background: linear-gradient(to right, rgb(208, 98, 118), rgb(209, 140, 76));
+  color: white;
+}
+
+.scss {
+  background-color: rgb(183, 59, 121);
+  color: white;
+}
+
+.framer-motion {
+  background: linear-gradient(to right, rgb(214, 0, 158), rgb(106, 0, 241));
+  color: white;
+}
