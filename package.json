@@ -49,8 +49,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/nicenicegame/nicenicegame.github.io"
-  },
-  "bugs": {
-    "url": "https://github.com/nicenicegame/nicenicegame.github.io/issues"
   }
 }
