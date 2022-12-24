@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useStaticQuery, graphql } from 'gatsby'
 import ParallaxElement from './ParallaxElement'
 import { useMediaQuery } from 'react-responsive'
-import { useScroll } from '../hooks/useScroll'
+import { useScrollInView } from '../hooks/useScrollInView'
 
 const projectsContainer = {
   show: {
@@ -56,7 +56,7 @@ const mobileAnimation = {
 
 const Projects = ({ setSectionOffsetTop, sectionOffsetTop }) => {
   const isDisabledAnimation = useMediaQuery({ query: '(max-width: 900px)' })
-  const [projectsGridRef, controls] = useScroll({
+  const [projectsGridRef, controls] = useScrollInView({
     threshold: 0.35,
     triggerOnce: true
   })
@@ -77,6 +77,7 @@ const Projects = ({ setSectionOffsetTop, sectionOffsetTop }) => {
       }
     }
   `)
+
   const projects = useMemo(() => {
     const mapProjectsData = data.allMarkdownRemark.nodes.map(
       (node) => node.frontmatter
@@ -147,7 +148,7 @@ const ProjectItem = ({ items, isDisabledAnimation }) => {
       {items.map((item, itemIndex) => (
         <motion.div
           onClick={() => openProjectLink(item.link)}
-          className={`projects-item ${item.isBig ? 'big' : null}`}
+          className={`projects-item ${item.isBig && 'big'}`}
           variants={projectItem}
           key={`project-${itemIndex}`}>
           <motion.div

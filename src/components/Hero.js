@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { motion } from 'framer-motion'
 import { faMouse } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useAnimation } from 'framer-motion'
 import ParallaxElement from './ParallaxElement'
+import { useScrollTrigger } from '../hooks/useScrollTrigger'
 
 const heroAnimation = {
   hidden: { opacity: 0 },
@@ -95,17 +95,8 @@ const heroTextAnimation = {
   show: { opacity: 1, transition: { duration: 0.2 } }
 }
 
-const Hero = ({ windowScrollY }) => {
-  const [isScrollExit, setIsScrollExit] = useState(false)
-  const controls = useAnimation()
-
-  useEffect(() => {
-    if (!isScrollExit) controls.start('show')
-    if (windowScrollY > 50 && !isScrollExit) {
-      controls.start('exit')
-      setIsScrollExit(true)
-    }
-  }, [windowScrollY])
+const Hero = () => {
+  const controls = useScrollTrigger(50)
 
   return (
     <>

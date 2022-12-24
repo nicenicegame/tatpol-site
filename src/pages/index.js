@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Head from '../components/Head'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
@@ -13,24 +13,12 @@ const App = () => {
     projects: 0,
     contact: 0
   })
-  const [windowScrollY, setWindowScrollY] = useState(0)
-
-  const updateScrollY = () => {
-    setWindowScrollY(window.scrollY)
-  }
-
-  useEffect(() => {
-    setWindowScrollY(window.scrollY)
-    window.addEventListener('scroll', updateScrollY, { passive: true })
-
-    return () => window.removeEventListener('scroll', updateScrollY)
-  }, [])
 
   return (
     <div className="app">
       <Head />
       <Navbar />
-      <Hero windowScrollY={windowScrollY} />
+      <Hero />
       <Experience
         setSectionOffsetTop={setSectionOffsetTop}
         sectionOffsetTop={sectionOffsetTop}
