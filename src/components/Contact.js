@@ -33,7 +33,7 @@ const contactList = [
   {
     text: 'Email',
     icon: faAt,
-    link: 'mailto:nicenicegame@gmail.com'
+    link: 'mailto:samakpong.tatpol@gmail.com'
   }
 ]
 
