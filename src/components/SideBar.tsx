@@ -22,7 +22,7 @@ export default async function SideBar() {
   // }
 
   return (
-    <nav className="flex w-60 flex-auto select-none flex-col overflow-hidden text-sm">
+    <nav className="flex w-60 select-none flex-col overflow-hidden text-sm">
       <Level>
         <Folder
           label="nicenicegame.github.io"

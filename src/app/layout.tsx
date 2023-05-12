@@ -29,7 +29,7 @@ export default function RootLayout({
               <ActivityBar />
               <SideBar />
               <DraggableVerticalLine onDrag={(e) => console.log(e)} />
-              <div className="flex-grow-[5]">{children}</div>
+              <div className="flex-grow">{children}</div>
             </div>
           </div>
         </main>
