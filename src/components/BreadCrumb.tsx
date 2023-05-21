@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import { usePathname } from "next/navigation";
-import { VscChevronRight } from "react-icons/vsc";
+import { usePathname } from 'next/navigation'
+import { VscChevronRight } from 'react-icons/vsc'
 
 export default function BreadCrumb() {
-  const pathname = usePathname();
-  const paths = pathname.split("/").slice(1);
+  const pathname = usePathname()
+  const paths = pathname.split('/').slice(1)
 
   return (
     <div className="flex gap-1 p-1 px-4">
@@ -16,5 +16,5 @@ export default function BreadCrumb() {
         </div>
       ))}
     </div>
-  );
+  )
 }

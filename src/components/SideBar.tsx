@@ -2,7 +2,7 @@ import Level from './Level'
 import Folder from './Folder'
 import File from './File'
 
-export default async function SideBar() {
+export default function SideBar() {
   // const response = await fetch('http://localhost:3000/api/markdown')
   // const directory = (await response.json()) as {
   //   name: string
@@ -22,14 +22,13 @@ export default async function SideBar() {
   // }
 
   return (
-    <nav className="flex w-60 select-none flex-col overflow-hidden text-sm">
+    <nav className="flex flex-shrink-0 flex-grow basis-36 select-none flex-col overflow-hidden text-sm">
       <Level>
         <Folder
           label="nicenicegame.github.io"
           labelClassName="uppercase font-semibold"
           iconSize={16}
-          hoverable={false}
-        >
+          hoverable={false}>
           <Level>
             <Folder label="about">
               <Level>
