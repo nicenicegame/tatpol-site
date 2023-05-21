@@ -20,14 +20,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main className="flex h-screen flex-col items-center justify-between lg:px-24 lg:py-12">
           <div className="flex w-full flex-1 flex-col overflow-hidden rounded-md border">
             <MenuBar />
-            <div className="flex flex-1">
+            <div className="flex flex-1 overflow-hidden">
               <ActivityBar />
               <PanelGroup direction="horizontal">
-                <Panel defaultSize={20}>
+                <Panel minSize={20} defaultSize={20}>
                   <SideBar />
                 </Panel>
-                <PanelResizeHandle />
-                <Panel defaultSize={80}>{children}</Panel>
+                <PanelResizeHandle className="w-1" />
+                <Panel minSize={50} defaultSize={80}>
+                  {children}
+                </Panel>
               </PanelGroup>
             </div>
           </div>
