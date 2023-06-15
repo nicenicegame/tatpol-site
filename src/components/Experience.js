@@ -37,16 +37,14 @@ const Experience = ({ sectionOffsetTop, setSectionOffsetTop }) => {
         stiffness={400}
         damping={100}>
         <div className="work-list">
-          <div className="work-img">
-            <StaticImage
-              src="../images/sellsuki-intern.png"
-              alt="sellsuki pic"
-              placeholder="blurred"
-              width={120}
-              height={120}
-              layout="fixed"
-            />
-          </div>
+          <StaticImage
+            src="../images/sellsuki-intern.png"
+            alt="sellsuki pic"
+            placeholder="blurred"
+            width={120}
+            height={120}
+            layout="fixed"
+          />
           <div className="work-text">
             <h4 className="role">Frontend Developer</h4>
             <p>Sellsuki &middot; Internship</p>
@@ -57,6 +55,26 @@ const Experience = ({ sectionOffsetTop, setSectionOffsetTop }) => {
               <span className="pill vuex">#Vuex</span>
               <span className="dot-spacer">&middot;</span>
               <span className="pill vuetify">#Vuetify</span>
+            </p>
+          </div>
+        </div>
+        <div className="work-list">
+          <StaticImage
+            src="../images/lmwn.png"
+            alt="lmwn pic"
+            placeholder="blurred"
+            width={120}
+            height={120}
+            transformOptions={{ fit: 'inside' }}
+          />
+          <div className="work-text">
+            <h4 className="role">Software Engineer, Android</h4>
+            <p>LINE MAN Wongnai &middot; Cooperative Internship</p>
+            <p className="date">Jun 2022 - Nov 2022</p>
+            <p className="hashtag">
+              <span className="pill kotlin">#Kotlin</span>
+              <span className="dot-spacer">&middot;</span>
+              <span className="pill aac">#AAC</span>
             </p>
           </div>
         </div>

@@ -96,8 +96,6 @@ const heroTextAnimation = {
 }
 
 const Hero = () => {
-  const controls = useScrollTrigger(50)
-
   return (
     <>
       <motion.div
@@ -150,19 +148,26 @@ const Hero = () => {
         </div>
       </motion.div>
       <motion.div className="hero-footer">
-        <motion.div
-          className="scroll-down"
-          variants={scrollDown}
-          initial="hidden"
-          exit="exit"
-          animate={controls}>
-          <motion.div className="scroll-down-text" variants={scrollDownText}>
-            <FontAwesomeIcon icon={faMouse} />
-            <p>Scroll down</p>
-          </motion.div>
-        </motion.div>
+        <ScrollDown />
       </motion.div>
     </>
+  )
+}
+
+const ScrollDown = () => {
+  const controls = useScrollTrigger(50)
+  return (
+    <motion.div
+      className="scroll-down"
+      variants={scrollDown}
+      initial="hidden"
+      exit="exit"
+      animate={controls}>
+      <motion.div className="scroll-down-text" variants={scrollDownText}>
+        <FontAwesomeIcon icon={faMouse} />
+        <p>Scroll down</p>
+      </motion.div>
+    </motion.div>
   )
 }
 

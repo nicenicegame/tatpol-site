@@ -1,29 +1,22 @@
 import { useAnimation, useViewportScroll } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 export const useScrollTrigger = (scroll) => {
-  const [isScrollExit, setIsScrollExit] = useState(false)
   const controls = useAnimation()
   const { scrollY } = useViewportScroll()
 
   useEffect(() => {
+    controls.start('show')
     const unsubscribeOnScrollYChange = scrollY.onChange((value) => {
-      if (value > scroll && !isScrollExit) {
-        setIsScrollExit(true)
+      if (value > scroll) {
+        controls.start('exit')
       }
     })
     return () => {
+      controls.stop()
       unsubscribeOnScrollYChange()
     }
   }, [])
-
-  useEffect(() => {
-    if (isScrollExit) {
-      controls.start('exit')
-    } else {
-      controls.start('show')
-    }
-  }, [isScrollExit])
 
   return controls
 }
