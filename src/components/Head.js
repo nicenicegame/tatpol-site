@@ -24,7 +24,7 @@ const Head = () => {
 
       <script
         src="https://kit.fontawesome.com/2f1a6e5d18.js"
-        crossorigin="anonymous"></script>
+        crossOrigin="anonymous"></script>
 
       <title>{title}</title>
     </Helmet>

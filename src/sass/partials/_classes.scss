@@ -21,7 +21,9 @@
   border: 2px solid transparent;
   cursor: pointer;
   outline: none;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
 
   &.btn-primary {
     background-color: $color3;
@@ -47,7 +49,11 @@
 }
 
 .text-shadow {
-  text-shadow: -1px 0 $color3, 0 1px $color3, 1px 0 $color3, 0 -1px $color3;
+  text-shadow:
+    -1px 0 $color3,
+    0 1px $color3,
+    1px 0 $color3,
+    0 -1px $color3;
   color: $color1;
   user-select: none;
   font-size: 100px;
@@ -92,8 +98,13 @@
 }
 
 .kotlin {
-  background: rgb(192,24,228);
-  background: linear-gradient(28deg, rgba(192,24,228,1) 22%, rgba(131,77,253,1) 65%, rgba(226,67,96,1) 100%);
+  background: rgb(192, 24, 228);
+  background: linear-gradient(
+    28deg,
+    rgba(192, 24, 228, 1) 22%,
+    rgba(131, 77, 253, 1) 65%,
+    rgba(226, 67, 96, 1) 100%
+  );
   color: black;
 }
 
