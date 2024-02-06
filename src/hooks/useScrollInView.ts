@@ -16,5 +16,5 @@ export const useScrollInView = (option) => {
     }
   }, [isInView])
 
-  return [element, controls]
+  return [element, controls] as const
 }

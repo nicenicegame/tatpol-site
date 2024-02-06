@@ -5,55 +5,14 @@ import ParallaxElement from './ParallaxElement'
 import { useMediaQuery } from 'react-responsive'
 import { useScrollInView } from '../hooks/useScrollInView'
 import { useSectionTopOffset } from '../providers/SectionTopOffsetProvider'
-
-const projectsContainer = {
-  show: {
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-}
-
-const projectItem = {
-  hidden: {
-    opacity: 0
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: 'easeOut'
-    }
-  }
-}
-
-const projectImage = {
-  animate: {
-    scale: 1.05
-  },
-  initial: {
-    scale: 1
-  }
-}
-
-const projectDescription = {
-  initial: { opacity: 0, y: '100%' },
-  animate: { opacity: 1, y: 0, transition: { ease: 'easeInOut' } }
-}
-
-const backdrop = {
-  animate: { opacity: 0.7 },
-  initial: { opacity: 0, transition: { ease: 'easeInOut' } }
-}
-
-const mobileAnimation = {
-  animate: {
-    x: 0
-  },
-  initial: {
-    x: -80
-  }
-}
+import {
+  projectsContainer,
+  projectItem,
+  mobileAnimation,
+  projectImage,
+  backdrop,
+  projectDescription
+} from '../animations/projectsAnimation'
 
 const Projects = () => {
   const [sectionOffsetTop, setSectionOffsetTop] = useSectionTopOffset()
@@ -62,7 +21,7 @@ const Projects = () => {
     threshold: 0.35,
     triggerOnce: true
   })
-  const projectsRef = useRef(null)
+  const projectsRef = useRef<HTMLDivElement>(null)
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
       allMarkdownRemark {
@@ -88,12 +47,10 @@ const Projects = () => {
   }, [data])
 
   useEffect(() => {
-    if (projectsRef.current) {
-      setSectionOffsetTop((prevSectionOffsetTop) => ({
-        ...prevSectionOffsetTop,
-        projects: projectsRef.current.offsetTop
-      }))
-    }
+    setSectionOffsetTop((prevSectionOffsetTop) => ({
+      ...prevSectionOffsetTop,
+      projects: projectsRef.current?.offsetTop ?? 0
+    }))
   }, [])
 
   return (

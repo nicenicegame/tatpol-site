@@ -2,42 +2,8 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-const navItems = [
-  { text: 'Experience', link: '/#experience' },
-  { text: 'Projects', link: '/#projects' },
-  { text: 'Contact', link: '/#contact' }
-]
-
-const navAnimation = {
-  show: {
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: 'easeInOut'
-    }
-  },
-  hidden: {
-    y: '-100%'
-  }
-}
-
-const sideNav = {
-  hidden: {
-    x: '100%',
-    transition: {
-      duration: 0.4,
-      ease: 'easeInOut'
-    }
-  },
-  show: {
-    x: 0,
-    transition: {
-      duration: 0.4,
-      ease: 'easeInOut'
-    }
-  }
-}
+import { navAnimation, sideNav } from '../animations/navAnimation'
+import NavItems from './NavItems'
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -66,7 +32,7 @@ const Navbar = () => {
         variants={sideNav}
         animate={!isNavOpen ? 'hidden' : 'show'}
         initial={false}>
-        <NavItems isNavOpen={isNavOpen} text="sideNav" />
+        <NavItems text="sideNav" />
         <FontAwesomeIcon
           icon={faTimes}
           className="close-nav"
@@ -83,18 +49,6 @@ const Navbar = () => {
           onClick={() => setIsNavOpen((prev) => !prev)}></motion.div>
       )}
     </AnimatePresence>
-  )
-}
-
-const NavItems = ({ text }) => {
-  return (
-    <ul className="nav-items">
-      {navItems.map((item, itemIndex) => (
-        <motion.li key={`${text}-${itemIndex}`} whileTap={{ scale: 1.1 }}>
-          <a href={item.link}>{item.text}</a>
-        </motion.li>
-      ))}
-    </ul>
   )
 }
 

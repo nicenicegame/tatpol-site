@@ -5,15 +5,13 @@ import { useSectionTopOffset } from '../providers/SectionTopOffsetProvider'
 
 const Experience = () => {
   const [sectionOffsetTop, setSectionOffsetTop] = useSectionTopOffset()
-  const expRef = useRef(null)
+  const expRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (expRef.current) {
-      setSectionOffsetTop((prevSectionOffsetTop) => ({
-        ...prevSectionOffsetTop,
-        experience: expRef.current.offsetTop
-      }))
-    }
+    setSectionOffsetTop((prevSectionOffsetTop) => ({
+      ...prevSectionOffsetTop,
+      experience: expRef.current?.offsetTop ?? 0
+    }))
   }, [])
 
   return (

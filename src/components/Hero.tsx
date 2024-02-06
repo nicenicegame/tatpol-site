@@ -1,99 +1,14 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { motion } from 'framer-motion'
-import { faMouse } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ParallaxElement from './ParallaxElement'
-import { useScrollTrigger } from '../hooks/useScrollTrigger'
-
-const heroAnimation = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      ease: 'easeInOut',
-      when: 'beforeChildren',
-      delay: 0.4
-    }
-  }
-}
-
-const letters = {
-  show: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
-
-const reversedLetters = {
-  show: {
-    transition: {
-      staggerChildren: 0.05,
-      staggerDirection: -1
-    }
-  }
-}
-
-const letterAnimation = {
-  hidden: { y: '100%' },
-  show: { y: 0, transition: { duration: 0.4, ease: 'easeInOut' } }
-}
-
-const scrollDown = {
-  hidden: {
-    scale: 0
-  },
-  show: {
-    scale: 1,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.6,
-      delay: 1,
-      when: 'beforeChildren'
-    }
-  },
-  exit: {
-    scale: 0,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.6,
-      when: 'afterChildren'
-    }
-  }
-}
-
-const scrollDownText = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.6
-    }
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.6
-    }
-  }
-}
-
-const heroTextContainer = {
-  show: {
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-}
-
-const heroTextAnimation = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.2 } }
-}
+import {
+  heroAnimation,
+  heroTextContainer,
+  heroTextAnimation
+} from '../animations/heroAnimation'
+import ScrollDown from './ScrollDown'
+import AnimatedText from './AnimatedText'
 
 const Hero = () => {
   return (
@@ -151,46 +66,6 @@ const Hero = () => {
         <ScrollDown />
       </motion.div>
     </>
-  )
-}
-
-const ScrollDown = () => {
-  const controls = useScrollTrigger(50)
-  return (
-    <motion.div
-      className="scroll-down"
-      variants={scrollDown}
-      initial="hidden"
-      exit="exit"
-      animate={controls}>
-      <motion.div className="scroll-down-text" variants={scrollDownText}>
-        <FontAwesomeIcon icon={faMouse} />
-        <p>Scroll down</p>
-      </motion.div>
-    </motion.div>
-  )
-}
-
-interface AnimatedTextProps {
-  text: string
-  coloredWord?: boolean
-  reversed?: boolean
-}
-
-const AnimatedText = ({ text, coloredWord, reversed }: AnimatedTextProps) => {
-  return (
-    <motion.span
-      variants={reversed ? reversedLetters : letters}
-      className="animated-text">
-      {text.split('').map((letter, index) => (
-        <motion.span
-          key={index}
-          className={coloredWord ? 'text-primary' : ''}
-          variants={letterAnimation}>
-          {letter}
-        </motion.span>
-      ))}
-    </motion.span>
   )
 }
 

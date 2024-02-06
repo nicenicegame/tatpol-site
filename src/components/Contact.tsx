@@ -40,15 +40,13 @@ const contactList = [
 
 const Contact = () => {
   const [, setSectionOffsetTop] = useSectionTopOffset()
-  const contactRef = useRef(null)
+  const contactRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (contactRef.current) {
-      setSectionOffsetTop((prevSectionOffsetTop) => ({
-        ...prevSectionOffsetTop,
-        contact: contactRef.current.offsetTop
-      }))
-    }
+    setSectionOffsetTop((prevSectionOffsetTop) => ({
+      ...prevSectionOffsetTop,
+      contact: contactRef.current?.offsetTop ?? 0
+    }))
   }, [])
 
   return (
