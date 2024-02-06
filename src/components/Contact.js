@@ -8,6 +8,7 @@ import {
 import { faAt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
+import { useSectionTopOffset } from '../providers/SectionTopOffsetProvider'
 
 const contactList = [
   {
@@ -37,7 +38,8 @@ const contactList = [
   }
 ]
 
-const Contact = ({ setSectionOffsetTop }) => {
+const Contact = () => {
+  const [, setSectionOffsetTop] = useSectionTopOffset()
   const contactRef = useRef(null)
 
   useEffect(() => {
@@ -47,7 +49,7 @@ const Contact = ({ setSectionOffsetTop }) => {
         contact: contactRef.current.offsetTop
       }))
     }
-  }, [contactRef.current])
+  }, [])
 
   return (
     <div className="container contact" ref={contactRef} id="contact">

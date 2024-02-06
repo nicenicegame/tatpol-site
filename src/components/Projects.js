@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import ParallaxElement from './ParallaxElement'
 import { useMediaQuery } from 'react-responsive'
 import { useScrollInView } from '../hooks/useScrollInView'
+import { useSectionTopOffset } from '../providers/SectionTopOffsetProvider'
 
 const projectsContainer = {
   show: {
@@ -54,7 +55,8 @@ const mobileAnimation = {
   }
 }
 
-const Projects = ({ setSectionOffsetTop, sectionOffsetTop }) => {
+const Projects = () => {
+  const [sectionOffsetTop, setSectionOffsetTop] = useSectionTopOffset()
   const isDisabledAnimation = useMediaQuery({ query: '(max-width: 900px)' })
   const [projectsGridRef, controls] = useScrollInView({
     threshold: 0.35,
@@ -92,7 +94,7 @@ const Projects = ({ setSectionOffsetTop, sectionOffsetTop }) => {
         projects: projectsRef.current.offsetTop
       }))
     }
-  }, [projectsRef.current])
+  }, [])
 
   return (
     <div className="container projects" ref={projectsRef} id="projects">

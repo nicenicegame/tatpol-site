@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import ParallaxElement from './ParallaxElement'
+import { useSectionTopOffset } from '../providers/SectionTopOffsetProvider'
 
-const Experience = ({ sectionOffsetTop, setSectionOffsetTop }) => {
+const Experience = () => {
+  const [sectionOffsetTop, setSectionOffsetTop] = useSectionTopOffset()
   const expRef = useRef(null)
 
   useEffect(() => {
@@ -12,7 +14,7 @@ const Experience = ({ sectionOffsetTop, setSectionOffsetTop }) => {
         experience: expRef.current.offsetTop
       }))
     }
-  }, [expRef.current])
+  }, [])
 
   return (
     <div className="container experience" ref={expRef} id="experience">
